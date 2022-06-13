@@ -1,3 +1,6 @@
+CloudFront URL: https://d61467h9cwech.cloudfront.net
+S3-website: http://my-aws-firsttt.s3-website-us-east-1.amazonaws.com/ (this link shouldn't work because I set up automatic deploy with serverless-single-page-app-plugin)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

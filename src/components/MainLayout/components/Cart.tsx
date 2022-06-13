@@ -10,17 +10,22 @@ import API_PATHS from "../../../constants/apiPaths";
 
 export default function Cart() {
   const dispatch = useDispatch();
+  
   useEffect(() => {
+    const authToken = localStorage.getItem('authorization_token');
+    
+    if (!!authToken) {
     axios.get(
         `${API_PATHS.cart}/profile/cart`,
         {
           headers: {
-            Authorization: `Basic ${localStorage.getItem('authorization_token')}`
+            Authorization: `Basic ${authToken}`
           }
         }
     ).then(({ data: { data: { cart } } }) => {
       dispatch(updateFromApi(cart))
     });
+  }
   }, [dispatch]);
   const cartItems = useSelector(selectCartItems);
   const badgeContent = cartItems.length || undefined;
