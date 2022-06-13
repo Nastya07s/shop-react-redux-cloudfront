@@ -98,15 +98,11 @@ const Form = (props: FormikProps<FormikValues>) => {
   );
 }
 
-type OrderParams = {
-  id: string;
-};
-
 const emptyValues: any = ProductSchema.cast();
 
 export default function PageProductForm() {
   const history = useHistory();
-  const {id} = useParams<OrderParams>();
+  const {id} = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
